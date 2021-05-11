@@ -1,0 +1,35 @@
+.title {
+    color: #0c2044;
+}
+
+.date {
+    color: #9da5b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.date-month {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.1rem;
+}
+
+.date-year {
+    font-size: 0.7rem;
+    font-weight: bold;
+    padding: 0.1rem;
+}
+
+.date-date {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.1rem;
+}
+
+.amount {
+    color: green;
+    padding: 0.25rem;
+    border-radius: 2rem;
+}
