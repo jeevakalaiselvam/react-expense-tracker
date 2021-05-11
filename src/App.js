@@ -3,8 +3,9 @@ import ExpenseItem from "./components/ExpenseItem";
 
 function App() {
     const expenses = [
-        { id: 1, name: "Expense 1", date: new Date(), amount: 200 },
-        { id: 2, name: "Expense 2", date: new Date(), amount: 150 },
+        { id: 1, name: "Prepaid Recharge", date: new Date(), amount: 100 },
+        { id: 2, name: "Grocery Shopping", date: new Date(), amount: 150 },
+        { id: 3, name: "Buying Books", date: new Date(), amount: 30 },
     ];
 
     return (
