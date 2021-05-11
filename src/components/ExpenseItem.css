@@ -1,0 +1,14 @@
+.expense {
+    padding: 1rem;
+    width: 50%;
+    color: #fdfdfd;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+}
+
+.expense:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+}
