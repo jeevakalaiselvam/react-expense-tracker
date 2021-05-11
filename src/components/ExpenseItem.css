@@ -1,14 +1,40 @@
 .expense {
     padding: 1rem;
-    width: 50%;
-    color: #fdfdfd;
+    color: rgb(148, 134, 134);
     border-radius: 0.5rem;
-    margin-top: 0.5rem;
-    background-color: #bdd4e7;
-    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    margin: 0.5rem 1rem;
+    background-color: #ffffff;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(1, 1, 1, 0.1);
 }
 
 .expense:hover {
     cursor: pointer;
     transform: scale(0.99);
+}
+
+.title {
+    color: #0c2044;
+}
+
+.date {
+    color: #9da5b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.date-data {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.amount {
+    color: green;
+    padding: 0.25rem;
+    border-radius: 2rem;
 }
