@@ -1,0 +1,14 @@
+.expense {
+    color: rgb(148, 134, 134);
+    margin: 0.5rem 1rem;
+    background-color: #ffffff;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expense:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+}

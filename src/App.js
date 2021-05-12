@@ -1,5 +1,6 @@
 import "./App.css";
-import ExpenseMain from "./components/ExpenseMain";
+import ExpenseInfo from "./components/expenses/ExpenseInfo";
+import Card from "./components/ui-elements/Card";
 
 function App() {
     const expenses = [
@@ -9,19 +10,19 @@ function App() {
     ];
 
     return (
-        <div className="App">
+        <Card className="App" color="">
             <h1>Expense Tracker</h1>
             {expenses.map((expense) => {
                 return (
-                    <ExpenseMain
+                    <ExpenseInfo
                         name={expense.name}
                         key={expense.id}
                         date={expense.date}
                         amount={expense.amount}
-                    ></ExpenseMain>
+                    ></ExpenseInfo>
                 );
             })}
-        </div>
+        </Card>
     );
 }
 

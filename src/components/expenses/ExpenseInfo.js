@@ -1,10 +1,10 @@
-import "./ExpenseMain.css";
+import "./ExpenseInfo.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseTitle from "./ExpenseTitle";
 import ExpenseAmount from "./ExpenseAmount";
-import Card from "./ui-elements/Card";
+import Card from "../ui-elements/Card";
 
-function ExpenseMain(props) {
+function ExpenseInfo(props) {
     const name = props.name;
     const amount = props.amount;
     const date = props.date;
@@ -18,4 +18,4 @@ function ExpenseMain(props) {
     );
 }
 
-export default ExpenseMain;
+export default ExpenseInfo;
