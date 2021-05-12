@@ -3,7 +3,8 @@ import { nanoid } from "nanoid";
 import { useState } from "react";
 
 const ExpenseFilter = (props) => {
-    const years = ["2019", "2020", "2021"];
+    const dates = props.dates;
+
     const [selectedYear, setSelectedYear] = useState("2020");
 
     const filterYearSelectHandler = (event) => {
@@ -23,7 +24,7 @@ const ExpenseFilter = (props) => {
                 onChange={filterYearSelectHandler}
                 className="filter-data-list"
             >
-                {years.map((year) => {
+                {dates.map((year) => {
                     return (
                         <option
                             value={year}

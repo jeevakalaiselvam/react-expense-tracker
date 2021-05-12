@@ -2,4 +2,6 @@
     color: green;
     padding: 0.25rem;
     border-radius: 2rem;
+    width: 20%;
+    text-align: center;
 }
