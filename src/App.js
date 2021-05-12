@@ -4,9 +4,12 @@ import Card from "./components/ui-elements/Card";
 import NewExpense from "./components/new-expenses/NewExpense";
 import ExpenseFilter from "./components/new-expenses/ExpenseFilter";
 import { nanoid } from "nanoid";
+import { useState } from "react";
+
+const initialExpenses = [];
 
 function App() {
-    const expenses = [];
+    const [expenses, setExpenses] = useState(initialExpenses);
 
     const newExpenseDataHandler = (expenseData) => {
         const newExpense = {
@@ -14,11 +17,15 @@ function App() {
             id: nanoid(),
         };
 
-        console.log(newExpense);
+        setExpenses((prevExpenses) => {
+            return [expenseData, ...prevExpenses];
+        });
+
+        console.log("New Expense: ", newExpense);
     };
 
     const filterYearSelectedHandler = (year) => {
-        console.log(year);
+        console.log("Filtered Year: ", year);
     };
 
     return (
