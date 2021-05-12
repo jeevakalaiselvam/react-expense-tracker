@@ -3,17 +3,23 @@ import ExpenseDate from "./ExpenseDate";
 import ExpenseTitle from "./ExpenseTitle";
 import ExpenseAmount from "./ExpenseAmount";
 import Card from "../ui-elements/Card";
+import { useState } from "react";
 
 function ExpenseInfo(props) {
-    const name = props.name;
-    const amount = props.amount;
-    const date = props.date;
+    const [title, setTitle] = useState(props.title);
+
+    const btnClicked = () => {
+        setTitle("New Name");
+    };
 
     return (
         <Card className="expense">
-            <ExpenseDate date={date} />
-            <ExpenseTitle name={name} />
-            <ExpenseAmount amount={amount} />
+            <ExpenseDate date={props.date} />
+            <ExpenseTitle name={title} />
+            <ExpenseAmount amount={props.amount} />
+            <button type="button" onClick={btnClicked}>
+                Edit
+            </button>
         </Card>
     );
 }
