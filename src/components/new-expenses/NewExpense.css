@@ -1,0 +1,49 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-item {
+    margin: 1rem;
+}
+
+.form-item label {
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.form-item input {
+    font-family: inherit;
+    background-color: #fefefe;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+}
+
+.form-item input:focus {
+    outline: none;
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: inherit;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+    border-radius: 0.25rem;
+}

@@ -1,6 +1,7 @@
 import "./App.css";
 import ExpenseInfo from "./components/expenses/ExpenseInfo";
 import Card from "./components/ui-elements/Card";
+import NewExpense from "./components/new-expenses/NewExpense";
 
 function App() {
     const expenses = [
@@ -10,8 +11,9 @@ function App() {
     ];
 
     return (
-        <Card className="App" color="">
+        <Card className="App">
             <h1>Expense Tracker</h1>
+            <NewExpense />
             {expenses.map((expense) => {
                 return (
                     <ExpenseInfo

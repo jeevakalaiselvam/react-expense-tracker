@@ -10,5 +10,19 @@
 
 .expense:hover {
     cursor: pointer;
-    transform: scale(0.99);
+}
+
+.btn {
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: inherit;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transform: scale(0.98);
 }

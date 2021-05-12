@@ -17,7 +17,7 @@ function ExpenseInfo(props) {
             <ExpenseDate date={props.date} />
             <ExpenseTitle name={title} />
             <ExpenseAmount amount={props.amount} />
-            <button type="button" onClick={btnClicked}>
+            <button type="button" onClick={btnClicked} className="btn">
                 Edit
             </button>
         </Card>
