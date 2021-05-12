@@ -2,18 +2,30 @@ import "./App.css";
 import ExpenseInfo from "./components/expenses/ExpenseInfo";
 import Card from "./components/ui-elements/Card";
 import NewExpense from "./components/new-expenses/NewExpense";
+import ExpenseFilter from "./components/new-expenses/ExpenseFilter";
+import { nanoid } from "nanoid";
 
 function App() {
-    const expenses = [
-        { id: 1, title: "Prepaid Recharge", date: new Date(), amount: 100 },
-        { id: 2, title: "Grocery Shopping", date: new Date(), amount: 150 },
-        { id: 3, title: "Buying Books", date: new Date(), amount: 30 },
-    ];
+    const expenses = [];
+
+    const newExpenseDataHandler = (expenseData) => {
+        const newExpense = {
+            ...expenseData,
+            id: nanoid(),
+        };
+
+        console.log(newExpense);
+    };
+
+    const filterYearSelectedHandler = (year) => {
+        console.log(year);
+    };
 
     return (
         <Card className="App">
             <h1>Expense Tracker</h1>
-            <NewExpense />
+            <NewExpense onNewExpenseData={newExpenseDataHandler} />
+            <ExpenseFilter onFitlerYearSelected={filterYearSelectedHandler} />
             {expenses.map((expense) => {
                 return (
                     <ExpenseInfo
