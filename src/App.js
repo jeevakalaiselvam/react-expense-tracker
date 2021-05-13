@@ -49,7 +49,7 @@ function App() {
         };
 
         setExpenses((prevExpenses) => {
-            return [expenseData, ...prevExpenses];
+            return [newExpense, ...prevExpenses];
         });
 
         console.log("New Expense: ", newExpense);

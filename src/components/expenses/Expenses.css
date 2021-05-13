@@ -1,5 +1,23 @@
 .expenses-list {
-    width: 100%;
+    width: 90%;
     border: none;
     box-shadow: none;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.expenses-container {
+    border: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.no-data {
+    padding: 1rem;
+    width: 90%;
+    text-align: center;
+    background-color: #fefefe;
 }

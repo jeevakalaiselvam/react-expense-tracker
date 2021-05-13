@@ -19,21 +19,29 @@ const Expenses = (props) => {
     const dates = ["2018", "2019", "2020", "2021", "2022"];
 
     return (
-        <Card className="expenses-list">
+        <Card className="expenses-container">
             <ExpenseFilter
                 onFitlerYearSelected={filterYearSelectedHandler}
                 dates={[...new Set(dates)]}
             />
-            {filteredExpenses.map((expense) => {
-                return (
-                    <ExpenseInfo
-                        title={expense.title}
-                        key={expense.id}
-                        date={expense.date}
-                        amount={expense.amount}
-                    ></ExpenseInfo>
-                );
-            })}
+            <Card className="expenses-list">
+                {filteredExpenses.length == 0 ? (
+                    <Card className="no-data">
+                        <p>No Expenses found !</p>{" "}
+                    </Card>
+                ) : (
+                    filteredExpenses.map((expense) => {
+                        return (
+                            <ExpenseInfo
+                                title={expense.title}
+                                key={expense.id}
+                                date={expense.date}
+                                amount={expense.amount}
+                            ></ExpenseInfo>
+                        );
+                    })
+                )}
+            </Card>
         </Card>
     );
 };
