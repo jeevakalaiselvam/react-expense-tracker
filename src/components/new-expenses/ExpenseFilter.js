@@ -5,7 +5,7 @@ import { useState } from "react";
 const ExpenseFilter = (props) => {
     const dates = props.dates;
 
-    const [selectedYear, setSelectedYear] = useState("2020");
+    const [selectedYear, setSelectedYear] = useState("All");
 
     const filterYearSelectHandler = (event) => {
         setSelectedYear(event.target.value);

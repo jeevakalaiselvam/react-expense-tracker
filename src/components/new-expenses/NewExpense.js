@@ -6,6 +6,12 @@ const NewExpense = (prop) => {
     const [enteredDate, setEnteredDate] = useState("");
     const [enteredAmount, setEnteredAmount] = useState("");
 
+    const [isEditing, setIsEditing] = useState(false);
+
+    const startEditingHandler = () => {
+        setIsEditing(true);
+    };
+
     const titleChangedHandler = (event) => {
         setEnteredTitle(event.target.value);
     };
@@ -35,6 +41,7 @@ const NewExpense = (prop) => {
 
     return (
         <div className="form-container">
+            <button onClick={startEditingHandler}>Add New Expense</button>
             <form className="form-main" onSubmit={formSubmitHandler}>
                 <div className="form-item">
                     <label>Expense:</label>

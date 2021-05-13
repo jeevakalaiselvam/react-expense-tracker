@@ -1,8 +1,8 @@
 import "./Expenses.css";
-import ExpenseInfo from "./ExpenseInfo";
 import ExpenseFilter from "../new-expenses/ExpenseFilter";
 import { useState } from "react";
 import Card from "../ui-elements/Card";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
     const [filteredYear, setFilteredYear] = useState("2020");
@@ -12,11 +12,17 @@ const Expenses = (props) => {
         setFilteredYear(year);
     };
 
-    const filteredExpenses = props.items.filter((expense) => {
-        return expense.date.getFullYear().toString() === filteredYear;
-    });
+    let filteredExpenses = {};
 
-    const dates = ["2018", "2019", "2020", "2021", "2022"];
+    if (filteredYear === "All") {
+        filteredExpenses = props.items;
+    } else {
+        filteredExpenses = props.items.filter((expense) => {
+            return expense.date.getFullYear().toString() === filteredYear;
+        });
+    }
+
+    const dates = ["All", "2018", "2019", "2020", "2021", "2022"];
 
     return (
         <Card className="expenses-container">
@@ -24,24 +30,7 @@ const Expenses = (props) => {
                 onFitlerYearSelected={filterYearSelectedHandler}
                 dates={[...new Set(dates)]}
             />
-            <Card className="expenses-list">
-                {filteredExpenses.length == 0 ? (
-                    <Card className="no-data">
-                        <p>No Expenses found !</p>{" "}
-                    </Card>
-                ) : (
-                    filteredExpenses.map((expense) => {
-                        return (
-                            <ExpenseInfo
-                                title={expense.title}
-                                key={expense.id}
-                                date={expense.date}
-                                amount={expense.amount}
-                            ></ExpenseInfo>
-                        );
-                    })
-                )}
-            </Card>
+            <ExpensesList filteredExpenses={filteredExpenses} />
         </Card>
     );
 };
