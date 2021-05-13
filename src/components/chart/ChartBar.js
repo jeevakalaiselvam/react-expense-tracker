@@ -4,8 +4,9 @@ const ChartBar = (props) => {
     const monthData = props.monthData;
     let totalAmountSpentInYear = props.totalAmountSpentInYear;
 
-    const heightPercentage =
-        100 - (monthData.value / totalAmountSpentInYear) * 100 + "%";
+    const height = 100 - (monthData.value / totalAmountSpentInYear) * 100;
+    const heightPercentage = height + "%";
+
     console.log(
         monthData.month,
         monthData.value,
@@ -23,7 +24,12 @@ const ChartBar = (props) => {
                     style={{ height: heightPercentage }}
                 ></div>
             </div>
-            <div className="month-name">{monthData.month}</div>
+            <div
+                className="month-name"
+                // style={{ color: height == 100 ? "white" : "green" }}
+            >
+                {monthData.month}
+            </div>
         </div>
     );
 };
