@@ -32,7 +32,9 @@ const Expenses = (props) => {
                 dates={[...new Set(dates)]}
                 defaultYear={filteredYear}
             />
-            <ExpensesChart dataPoints={filteredExpenses} />
+            {filteredExpenses.length != 0 && (
+                <ExpensesChart dataPoints={filteredExpenses} />
+            )}
             <ExpensesList filteredExpenses={filteredExpenses} />
         </Card>
     );
