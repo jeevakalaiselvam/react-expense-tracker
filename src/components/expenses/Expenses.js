@@ -3,9 +3,10 @@ import ExpenseFilter from "../new-expenses/ExpenseFilter";
 import { useState } from "react";
 import Card from "../ui-elements/Card";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = (props) => {
-    const [filteredYear, setFilteredYear] = useState("2020");
+    const [filteredYear, setFilteredYear] = useState("2021");
 
     const filterYearSelectedHandler = (year) => {
         console.log("Filtered Year: ", year);
@@ -22,14 +23,16 @@ const Expenses = (props) => {
         });
     }
 
-    const dates = ["All", "2018", "2019", "2020", "2021", "2022"];
+    const dates = ["2018", "2019", "2020", "2021", "2022"];
 
     return (
         <Card className="expenses-container">
             <ExpenseFilter
                 onFitlerYearSelected={filterYearSelectedHandler}
                 dates={[...new Set(dates)]}
+                defaultYear={filteredYear}
             />
+            <ExpensesChart dataPoints={filteredExpenses} />
             <ExpensesList filteredExpenses={filteredExpenses} />
         </Card>
     );

@@ -20,7 +20,7 @@ const ExpenseFilter = (props) => {
             <select
                 id="years"
                 name="years"
-                value={selectedYear}
+                value={props.defaultYear}
                 onChange={filterYearSelectHandler}
                 className="filter-data-list"
             >

@@ -1,0 +1,24 @@
+.expense-chart-bar {
+    height: 100%;
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.month-fill-container {
+    width: 6px;
+    height: 100%;
+    background-color: green;
+    text-align: center;
+}
+
+.month-fill {
+    background-color: white;
+}
+
+.month-name {
+    padding: 0.5rem;
+    color: white;
+}

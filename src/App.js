@@ -15,7 +15,7 @@ const initialExpenses = [
     {
         title: "Table",
         id: nanoid(),
-        date: new Date(2020, 4, 11),
+        date: new Date(2021, 4, 11),
         amount: 123.12,
     },
     {

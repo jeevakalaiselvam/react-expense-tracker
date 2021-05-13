@@ -31,6 +31,10 @@
     border: none;
 }
 
+.form-item button {
+    text-align: center;
+}
+
 .form-item input:focus {
     outline: none;
 }

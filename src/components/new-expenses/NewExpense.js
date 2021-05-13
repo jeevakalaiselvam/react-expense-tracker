@@ -12,6 +12,10 @@ const NewExpense = (prop) => {
         setIsEditing(true);
     };
 
+    const stopEditingHandler = () => {
+        setIsEditing(false);
+    };
+
     const titleChangedHandler = (event) => {
         setEnteredTitle(event.target.value);
     };
@@ -41,40 +45,55 @@ const NewExpense = (prop) => {
 
     return (
         <div className="form-container">
-            <button onClick={startEditingHandler}>Add New Expense</button>
-            <form className="form-main" onSubmit={formSubmitHandler}>
-                <div className="form-item">
-                    <label>Expense:</label>
-                    <input
-                        type="text"
-                        onChange={titleChangedHandler}
-                        value={enteredTitle}
-                    />
-                </div>
-                <div className="form-item">
-                    <label>Date:</label>
-                    <input
-                        type="date"
-                        onChange={dateChangedHandler}
-                        value={enteredDate}
-                    />
-                </div>
-                <div className="form-item">
-                    <label>Amount:</label>
-                    <input
-                        type="number"
-                        min="0.01"
-                        step="0.01"
-                        onChange={amountChangedHandler}
-                        value={enteredAmount}
-                    />
-                </div>
-                <div className="form-item">
-                    <button type="submit" className="btn">
-                        Submit
-                    </button>
-                </div>
-            </form>
+            {!isEditing && (
+                <button onClick={startEditingHandler} className="btn">
+                    Add New Expense
+                </button>
+            )}
+            {isEditing && (
+                <form className="form-main" onSubmit={formSubmitHandler}>
+                    <div className="form-item">
+                        <label>Expense:</label>
+                        <input
+                            type="text"
+                            onChange={titleChangedHandler}
+                            value={enteredTitle}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <label>Date:</label>
+                        <input
+                            type="date"
+                            onChange={dateChangedHandler}
+                            value={enteredDate}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <label>Amount:</label>
+                        <input
+                            type="number"
+                            min="0.01"
+                            step="0.01"
+                            onChange={amountChangedHandler}
+                            value={enteredAmount}
+                        />
+                    </div>
+                    <div className="form-item">
+                        <button type="submit" className="btn">
+                            Submit
+                        </button>
+                    </div>
+                    <div className="form-item">
+                        <button
+                            type="button"
+                            className="btn"
+                            onClick={stopEditingHandler}
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            )}
         </div>
     );
 };

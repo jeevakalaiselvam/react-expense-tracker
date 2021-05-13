@@ -1,0 +1,11 @@
+.expense-chart-container {
+    display: flex;
+    width: 90%;
+    padding-top: 1rem;
+    margin: 1rem auto;
+    background-color: rgb(68, 68, 68);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
