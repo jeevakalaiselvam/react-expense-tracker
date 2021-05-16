@@ -26,7 +26,7 @@ const ChartBar = (props) => {
             </div>
             <div
                 className="month-name"
-                // style={{ color: height == 100 ? "white" : "green" }}
+                // style={{ color: helsight == 100 ? "white" : "green" }}
             >
                 {monthData.month}
             </div>
